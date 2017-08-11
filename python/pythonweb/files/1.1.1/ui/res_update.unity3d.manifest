@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1504802453
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9e92f75fe45098ddf5d773c175df9546
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: eb6b06b1b3e2dbe026521de7a467fcd7
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/UI/Update@sprites.bytes
+- Assets/UI/Update@atlas0.png
+Dependencies: []

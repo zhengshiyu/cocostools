@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 4285170599
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: desc_common.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: desc_homemain.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: desc_planemain.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: desc_update.unity3d
+      Dependencies: {}
+    Info_4:
+      Name: res_common.unity3d
+      Dependencies: {}
+    Info_5:
+      Name: res_homemain.unity3d
+      Dependencies: {}
+    Info_6:
+      Name: res_planemain.unity3d
+      Dependencies: {}
+    Info_7:
+      Name: res_update.unity3d
+      Dependencies: {}

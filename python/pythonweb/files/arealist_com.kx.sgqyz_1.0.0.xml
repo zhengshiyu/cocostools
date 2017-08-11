@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+<DOWNLOAD>1</DOWNLOAD>
+<HostName>http://192.168.1.102:5000/download,http://192.168.1.102:5000/download</HostName>
+<resources>http://192.168.1.102:5000/download,http://192.168.1.102:5000/download</resources>
+<AppVersion>0.0.0</AppVersion>
+<ResVersion>1.1.1</ResVersion>
+<LocaleType>zh_CN</LocaleType>
+</config>

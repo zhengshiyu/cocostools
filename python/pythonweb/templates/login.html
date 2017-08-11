@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{#    <img src="{{ url_for('static',filename = '1.png')}}">#}
+
+    <div align="center" style="margin-top: 60px">
+        <h1 style="size:100pt">界面生成工具</h1>
+        <!--<img src="{{ url_for('static',filename = '1.png')}}">-->
+    </div>
+
+    <div align="center" style="margin-top: 80px">
+        <form name = form1 action="/hello" method="POST">
+            <button style="height:40px;width:200px;" type="submit">生成界面</button>
+        </form>
+
+
+
+        <form name = form2 action="/md5tool" method="POST" style="margin-top: 100px">
+            <button style="height:40px;width:200px;" type="submit">生成MD5</button>
+        </form>
+
+
+
+        <form name = form3 action="/telnet" method="POST" style="margin-top: 100px">
+            <button style="height:40px;width:200px;" type="submit">查看log</button>
+        </form>
+
+
+        <form name = form4 action="/langutil" method="POST" style="margin-top: 100px">
+            <button style="height:40px;width:200px;" type="submit">提取多语言</button>
+        </form>
+
+
+        <form name = form4 action="/lookfile" method="POST" style="margin-top: 100px">
+            <button style="height:40px;width:200px;" type="submit">查看app包</button>
+        </form>
+    </div>
+</body>
+</html>

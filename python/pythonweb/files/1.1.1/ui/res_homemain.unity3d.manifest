@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2897676079
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9494aad84c4310351978afccdd88dcd2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: eb6b06b1b3e2dbe026521de7a467fcd7
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/UI/HomeMain@sprites.bytes
+- Assets/UI/HomeMain@atlas0.png
+Dependencies: []

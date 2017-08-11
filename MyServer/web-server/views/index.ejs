@@ -1,0 +1,163 @@
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Game tools</title>
+    <link href="https://cdn.bootcss.com/ionic/1.3.2/css/ionic.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/ionic/1.3.2/js/ionic.bundle.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <style type="text/css">
+        body {
+            cursor: url('http://www.runob.com/try/demo_source/finger.png'), auto;
+            background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495229188957&di=eed36e66dc12f0586cfd4448f32fc942&imgtype=0&src=http%3A%2F%2Fdl.bizhi.sogou.com%2Fimages%2F2012%2F01%2F23%2F67925.jpg') repeat
+        }
+        p {
+            text-align: center;
+            margin-bottom: 40px !important;
+        }
+        button{
+            width: 200px;
+        }
+        .spinner svg {
+            width: 19% !important;
+            height: 85px !important;
+        }
+    </style>
+
+    <script type="text/javascript">
+        angular.module('myApp', ['ionic'])
+            .controller('PopupCtrl',function($scope, $ionicPopup, $timeout,$interval,$http) {
+                //  alert（警告） 对话框
+                $scope.UITOOLS = function(msg) {
+                    $scope.loadingbarstate = true
+                    $scope.names = ""
+                    $http({
+                        method: 'GET',
+                        url: 'uitools'
+                    }).then(function successCallback(response) {
+                        $scope.names = response.data;
+                        var alertPopup = $ionicPopup.alert({
+                            title: '提示',
+                            template: msg + "完成！！！！"
+                        });
+                        alertPopup.then(function(res) {
+
+                        });
+                        $scope.loadingbarstate = false
+                    }, function errorCallback(response) {
+                        // 请求失败执行代码
+                        $scope.names = "erro"
+                    });
+                };
+
+
+                $scope.MD5TOOLS = function(msg) {
+                    $scope.loadingbarstate = true
+                    $scope.names = ""
+                    $http({
+                        method: 'GET',
+                        url: 'md5tools'
+                    }).then(function successCallback(response) {
+                        $scope.names = response.data;
+                        var alertPopup = $ionicPopup.alert({
+                            title: '提示',
+                            template: msg + "完成！！！！"
+                        });
+                        alertPopup.then(function(res) {
+
+                        });
+                        $scope.loadingbarstate = false
+                    }, function errorCallback(response) {
+                        // 请求失败执行代码
+                        $scope.names = "erro"
+                    });
+                };
+
+
+                $scope.STARTRESSERVER = function(msg) {
+                    $scope.loadingbarstate = true
+                    $scope.names = ""
+                    $http({
+                        method: 'GET',
+                        url: 'startresserver'
+                    }).then(function successCallback(response) {
+                        $scope.names = response.data;
+                        $scope.loadingbarstate = false
+                    }, function errorCallback(response) {
+                        // 请求失败执行代码
+                        $scope.names = "erro"
+                    });
+                };
+
+                $scope.STARTFILESERVER = function (msg) {
+                    $scope.loadingbarstate = true
+                    $scope.names = ""
+                    $http({
+                        method: 'GET',
+                        url: 'showfiles'
+                    }).then(function successCallback(response) {
+                        $scope.names = response.data;
+                        $scope.loadingbarstate = false
+                    }, function errorCallback(response) {
+                        // 请求失败执行代码
+                        $scope.names = "erro"
+                    });
+                }
+
+                $scope.STARTPOMELOSERVER = function(msg) {
+                    $scope.loadingbarstate = true
+                    $scope.names = ""
+                    $http({
+                        method: 'GET',
+                        url: 'startpomeloserver'
+                    }).then(function successCallback(response) {
+                        $scope.names = response.data;
+                        $scope.loadingbarstate = false
+                    }, function errorCallback(response) {
+                        // 请求失败执行代码
+                        $scope.names = "erro"
+                    });
+                };
+
+
+                $scope.loadingbarstate = false
+                $scope.theTime = new Date().toLocaleTimeString();
+                $interval(function () {
+                    $scope.theTime = new Date().toLocaleTimeString();
+                }, 1000);
+
+            });
+    </script>
+</head>
+
+<body ng-app="myApp" ng-controller="PopupCtrl">
+
+<div class="bar bar-header bar-balanced">
+    <p style="font-size: 20px;margin-top: 8px">
+        {{theTime}}
+    </p>
+    <h1 class="title">Game Tools DesignBy PoeticRain</h1>
+</div>
+
+<ion-scroll zooming="true" direction="y">
+    <div class="content has-header padding" style="height: 5000px ">
+        <p><button class="button button-positive" ng-click="UITOOLS('生成界编')">生成界编</button>
+        </p><p><button class="button button-calm" ng-click="MD5TOOLS('资源MD5')">资源MD5</button>
+        </p><p><button class="button button-balanced">多语言提取</button>
+        </p><p><button class="button button-energized">AB包生成</button>
+        </p><p><button class="button button-assertive">查看LOG</button>
+        </p><p><button class="button button-royal" ng-click="STARTFILESERVER('启动资源浏览器')">启动资源浏览器</button></p>
+        </p><p><button class="button button-energized " ng-click="STARTRESSERVER('启动资源服务器')">启动资源服务器</button></p>
+        </p><p><button class="button button-calm" ng-click="STARTPOMELOSERVER('启动pomelo游戏服务器')">启动pomelo游戏服务器</button></p>
+        <p><ion-spinner icon="lines" class="spinner-calm" ng-show="loadingbarstate"></ion-spinner></p>
+        <p style="color: coral">
+            {{names}}
+        </p>
+    </div>
+</ion-scroll>
+
+<div class="bar bar-footer bar-balanced">
+    <div class="title">@copyright by zhengshiyu</div>
+</div>
+</body>
+</html>
